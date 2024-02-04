@@ -1,6 +1,11 @@
+import Navbar from "./Components/Navbar"
+import HeroSection from "./Components/HeroSection"
 function App() {
   return (
-    <h1 className="bg-red-600 text-white">Netflix clone coming...</h1>
+    <div>
+      <Navbar />
+      <HeroSection />
+    </div>
   )
 }
 
