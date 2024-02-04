@@ -3,13 +3,13 @@ import logo from '../assets/Logonetflix.png'
 import user from '../assets/user.png'
 
 const Navbar = () => {
-    const [istop, setIstop] = useState(true);
+    const [istop, setIstop] = useState(false);
     useEffect(() => {
         const addbg = () => {
-            if (window.scrollY < 100) {
-                setIstop(true);
-            } else {
+            if (window.scrollY === 0) {
                 setIstop(false);
+            } else {
+                setIstop(true);
             }
         }
         window.addEventListener('scroll', addbg);
@@ -17,9 +17,9 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className={`flex justify-between items-center px-14 py-6 sticky top-0 ${istop && 'bg-black'} transition-all ease-in-out duration-500`}>
-            <img src={logo} alt='netflix logo' className='w-40' />
-            <img src={user} alt='user pic' className='w-10' />
+        <div className={`flex justify-between items-center px-14 py-4 w-full fixed top-0 z-10 ${istop && 'bg-black/90'} transition-all ease-in-out duration-500`}>
+            <img src={logo} alt='netflix logo' className='w-32' />
+            <img src={user} alt='user pic' className='w-7' />
         </div>
     )
 }
